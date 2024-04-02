@@ -39,11 +39,27 @@
                     {{ $message }}
             </div>
             @enderror
-
+            <h1>ciao</h1>
 
             <label for="category" class="form-label">Category</label>
-            <input type="text" name="category" id="category" class="form-control" placeholder=""
-                aria-describedby="helpId" />
+            {{-- <input type="text" name="category" id="category" class="form-control" placeholder=""
+                aria-describedby="helpId" /> --}}
+
+            <div class="mb-3">
+                <label for="" class="form-label">City</label>
+                <select
+                    class="form-select form-select-lg"
+                    name=""
+                    id=""
+                >
+                    <option selected>Select one</option>
+                    <option value="">New Delhi</option>
+                    <option value="">Istanbul</option>
+                    <option value="">Jakarta</option>
+                </select>
+            </div>
+
+
 
             <label for="client" class="form-label">Client</label>
             <input type="text" name="client" id="client" class="form-control" placeholder=""
