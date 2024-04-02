@@ -4,8 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
-
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Str;
 
 class Wallet extends Model
@@ -28,4 +27,7 @@ class Wallet extends Model
         return Str::slug($title, '-');
     }
 
+    public function wallets(): BelongsTo{
+        return $this->belongsTo(Wallet::class);
+    }
 }
