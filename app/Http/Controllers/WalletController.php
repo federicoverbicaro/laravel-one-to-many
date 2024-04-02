@@ -89,7 +89,7 @@ class WalletController extends Controller
         $slug = Wallet::generateSlug($request->title);
 
         $validatedData['slug'] = $slug;
-
+        $validatedData['category_id'] = $request->input('category_id');
         $wallet->update($validatedData);
 
         return redirect()->route('dashboard.wallets.index');

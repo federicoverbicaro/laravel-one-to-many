@@ -15,7 +15,7 @@
 
 
         <div class="card-body">
-            <p class="card-text">Category: {{ $wallet->category_id}}</p>
+            <p>Category: {{ $wallet->category ? $wallet->category->name : 'N/A' }}</p>
             <p class="card-text">Client: {{ $wallet->client}}</p>
             <p class="card-text">Date: {{ $wallet->date}}</p>
             <p class="card-text">address: {{ $wallet->url}}</p>

@@ -49,11 +49,12 @@
                         class="form-select form-select-lg @error('category_id') is-invalid
                         @enderror"
                         name="category_id"
-                        id="category_id"
-                    >
+                        id="category_id">
                         <option selected value="">Select one</option>
+
                         @foreach ($categories as $element )
-                            <option value="{{ $element->id }}">{{ $element->name }}</option>
+                            <option
+                            value="{{ $element->id }}" {{ $element->id == old('category_id', $wallet->category ? $wallet->category->id : '') ? 'selected' : '' }}>{{ $element->name }}</option>
                         @endforeach
                     </select>
                 </div>
