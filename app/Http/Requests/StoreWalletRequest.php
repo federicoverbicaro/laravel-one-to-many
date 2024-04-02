@@ -27,8 +27,8 @@ class StoreWalletRequest extends FormRequest
         return [
             'title' => 'required|max:128',
             'description' => 'required|max:128',
-            'new_image' => 'required|file|jpeg,image/png,image/gif|max:2048',
-
+            'new_image' => 'nullable',
+            'category_id' => 'nullable|exists:categories,id',
         ];
     }
 

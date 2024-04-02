@@ -13,8 +13,9 @@
             <p class="card-text">{{ $wallet->description}}</p>
         </div>
 
+
         <div class="card-body">
-            <p class="card-text">Category: {{ $wallet->category}}</p>
+            <p class="card-text">Category: {{ $wallet->category_id}}</p>
             <p class="card-text">Client: {{ $wallet->client}}</p>
             <p class="card-text">Date: {{ $wallet->date}}</p>
             <p class="card-text">address: {{ $wallet->url}}</p>

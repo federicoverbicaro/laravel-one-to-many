@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Storage;
 
 use App\Http\Requests\StoreWalletRequest;
 use App\Http\Requests\UpdateWalletRequest;
+use App\Models\Category;
 use App\Models\Wallet;
 
 use Illuminate\Support\Str;
@@ -30,8 +31,9 @@ class WalletController extends Controller
      */
     public function create()
     {
+        $categories = Category::all();
 
-        return view('pages.wallet.create');
+        return view('pages.wallet.create', compact('categories'));
     }
 
     /**
@@ -63,6 +65,7 @@ class WalletController extends Controller
      */
     public function show(Wallet $wallet)
     {
+
         return view('pages.wallet.show', compact('wallet'));
 
     }
@@ -72,8 +75,9 @@ class WalletController extends Controller
      */
     public function edit(Wallet $wallet)
     {
-        $wallets = Wallet::findOrFail($wallet->id);
-        return view('pages.wallet.edit', compact('wallets'));
+
+        $categories = Category::all();
+        return view('pages.wallet.edit', compact('wallet', 'categories' ));
     }
 
     /**

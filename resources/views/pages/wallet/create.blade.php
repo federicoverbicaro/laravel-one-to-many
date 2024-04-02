@@ -39,23 +39,24 @@
                     {{ $message }}
             </div>
             @enderror
-            <h1>ciao</h1>
 
-            <label for="category" class="form-label">Category</label>
+
+
             {{-- <input type="text" name="category" id="category" class="form-control" placeholder=""
                 aria-describedby="helpId" /> --}}
 
             <div class="mb-3">
-                <label for="" class="form-label">City</label>
+                <label for="category_id" class="form-label">Category</label>
                 <select
-                    class="form-select form-select-lg"
-                    name=""
-                    id=""
+                    class="form-select form-select-lg @error('category_id') is-invalid
+                    @enderror"
+                    name="category_id"
+                    id="category_id"
                 >
-                    <option selected>Select one</option>
-                    <option value="">New Delhi</option>
-                    <option value="">Istanbul</option>
-                    <option value="">Jakarta</option>
+                    <option selected value="">Select one</option>
+                    @foreach ($categories as $element )
+                        <option value="{{ $element->id }}">{{ $element->name }}</option>
+                    @endforeach
                 </select>
             </div>
 

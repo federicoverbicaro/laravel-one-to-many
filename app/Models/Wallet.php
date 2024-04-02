@@ -15,11 +15,12 @@ class Wallet extends Model
         'title',
         'description',
         'new_image',
-        'category',
+        'category_id',
         'client',
         'date',
         'url',
-        'slug'
+        'slug',
+
     ];
 
     public static function generateSlug($title)
@@ -27,7 +28,8 @@ class Wallet extends Model
         return Str::slug($title, '-');
     }
 
-    public function wallets(): BelongsTo{
-        return $this->belongsTo(Wallet::class);
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
     }
 }
