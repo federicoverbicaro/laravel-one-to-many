@@ -15,7 +15,7 @@ class Category extends Model
         'slug',
     ];
 
-    public function wallets(): HasMany
+    public function wallet(): HasMany
     {
         return $this->hasMany(Wallet::class);
     }

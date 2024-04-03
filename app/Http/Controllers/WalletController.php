@@ -65,8 +65,8 @@ class WalletController extends Controller
      */
     public function show(Wallet  $wallet)
     {
-        // $wallet = Wallet::where('slug', $slug)->firstOrFail();
-        // $wallet->load('category');
+
+        // $categories = Category::select('id', 'name')->get();
         return view('pages.wallet.show', compact('wallet'));
 
     }
@@ -78,7 +78,9 @@ class WalletController extends Controller
     {
 
         $categories = Category::all();
-        return view('pages.wallet.edit', compact('wallet', 'categories' ));
+        $slug = Wallet::generateSlug($wallet->title);
+        $validatedData['slug'] = $slug;
+        return view('pages.wallet.edit', compact('wallet','categories'));
     }
 
     /**

@@ -54,7 +54,7 @@
 
                         @foreach ($categories as $element )
                             <option
-                            value="{{ $element->id }}" {{ $element->id == old('category_id', $wallet->category ? $wallet->category->id : '') ? 'selected' : '' }}>{{ $element->name }}</option>
+                            value="{{ old('category_id',$wallet->category )}}">{{ $element->name }}</option>
                         @endforeach
                     </select>
                 </div>

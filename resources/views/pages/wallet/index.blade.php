@@ -18,6 +18,7 @@
             </thead>
             <tbody>
                 @foreach ($wallets as $wallet)
+
                     <tr class="">
                         <td>{{ $wallet->id }}</td>
 
@@ -34,7 +35,7 @@
 
 
                         <td class=" d-flex gap-2 align-items-end border-0 ">
-                            <a href="{{ route('dashboard.wallets.show',$wallet->slug) }}"type="submit"
+                            <a href="{{ route('dashboard.wallets.edit',$wallet->slug) }}"type="submit"
                                 class="btn btn-primary ">Edit</a>
 
                             <form action="{{ route('dashboard.wallets.destroy', $wallet->slug) }}" method="Post">

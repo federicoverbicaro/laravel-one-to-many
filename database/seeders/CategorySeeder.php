@@ -8,6 +8,8 @@ use Illuminate\Database\Seeder;
 
 use Illuminate\Support\Str;
 
+
+
 class CategorySeeder extends Seeder
 {
     /**
@@ -23,6 +25,7 @@ class CategorySeeder extends Seeder
             'Vue',
 
         ];
+
 
         foreach($categories as $element){
             $new_category = new Category();

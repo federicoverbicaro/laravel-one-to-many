@@ -45,6 +45,7 @@
             {{-- <input type="text" name="category" id="category" class="form-control" placeholder=""
                 aria-describedby="helpId" /> --}}
 
+
             <div class="mb-3">
                 <label for="category_id" class="form-label">Category</label>
                 <select
@@ -55,7 +56,9 @@
                 >
                     <option selected value="">Select one</option>
                     @foreach ($categories as $element )
+
                         <option value="{{ $element->id }}">{{ $element->name }}</option>
+
                     @endforeach
                 </select>
             </div>
