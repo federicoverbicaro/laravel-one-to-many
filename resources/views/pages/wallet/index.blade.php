@@ -22,8 +22,7 @@
                         <td>{{ $wallet->id }}</td>
 
                         <td class="text-center">
-                            <a href="{{ route('dashboard.wallets.show', ['wallet' => $wallet['id']]) }}"
-                                class="text-uppercase ">
+                            <a href="{{ route('dashboard.wallets.show', $wallet->slug) }}" class="text-uppercase">
                                 {{ $wallet->title }}
                             </a>
                         </td>
@@ -35,10 +34,10 @@
 
 
                         <td class=" d-flex gap-2 align-items-end border-0 ">
-                            <a href="{{ route('dashboard.wallets.edit', ['wallet' => $wallet['id']]) }}" type="submit"
+                            <a href="{{ route('dashboard.wallets.show',$wallet->slug) }}"type="submit"
                                 class="btn btn-primary ">Edit</a>
 
-                            <form action="{{ route('dashboard.wallets.destroy', $wallet->id) }}" method="Post">
+                            <form action="{{ route('dashboard.wallets.destroy', $wallet->slug) }}" method="Post">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger ">Delete</button>

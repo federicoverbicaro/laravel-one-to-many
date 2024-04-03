@@ -36,7 +36,8 @@ Route::middleware('auth')
     ->name('dashboard.')
     ->group(function () {
 
-        Route::resource('wallets', WalletController::class);
+        Route::resource('wallets', WalletController::class)->parameters([
+            'wallets' => 'wallet:slug',]);
     });
 
 

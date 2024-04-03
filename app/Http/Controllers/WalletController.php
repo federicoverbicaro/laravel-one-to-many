@@ -63,9 +63,10 @@ class WalletController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Wallet $wallet)
+    public function show(Wallet  $wallet)
     {
-
+        // $wallet = Wallet::where('slug', $slug)->firstOrFail();
+        // $wallet->load('category');
         return view('pages.wallet.show', compact('wallet'));
 
     }
@@ -89,7 +90,10 @@ class WalletController extends Controller
         $slug = Wallet::generateSlug($request->title);
 
         $validatedData['slug'] = $slug;
-        $validatedData['category_id'] = $request->input('category_id');
+        if ($request->has('category_id')) {
+            $validatedData['category_id'] = $request->input('category_id');
+        }
+
         $wallet->update($validatedData);
 
         return redirect()->route('dashboard.wallets.index');
